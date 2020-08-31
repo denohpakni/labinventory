@@ -7,6 +7,8 @@
 	
 	<link rel="stylesheet" href="{% static 'stock/base.css' %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
 	{% block title %}
@@ -30,7 +32,7 @@
 		<table class='cols'>
 			<tr>
 				<th> Database Name: <div id="greenfont"> LabStock.db </div></th>
-				<th> User: <div id="greenfont"> {{request.user}} </div></th>
+				<th> LOGED IN User: <div id="greenfont"> {{request.user}} </div></th>
 				<th> Last Login: <div id="greenfont"> {{request.user.last_login}} </div></th>
 			</tr>
 		</table>
