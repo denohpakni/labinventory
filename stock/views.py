@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-
 # Create your views here.
 from .models import Product, ProductForm, HistConf
 from .backend import Factory
@@ -94,3 +93,6 @@ def detail(request, pk):
 def history(request):
 	context ={'history':HistConf.objects.all()[::-1]}
 	return render(request, 'stock/stock_history.html', context)
+
+
+ 

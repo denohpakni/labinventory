@@ -22,7 +22,7 @@
 			<thead>
 				<th onclick="sortTable123(0)" style="border-top-left-radius: 5px; padding-left: 10px;">ID <i class="material-icons icn">sort</i></th>
 				<th onclick="sortTableABC(1)">Name </th>
-				<th onclick="sortTable123(2)">P.key</th>
+				<th onclick="sortTable123(2)">P.key/CatNo.</th>
 				<th onclick="sortTableABC(3)">Description</th>
 				<th onclick="sortTableABC(4)">Category</th>
 				<th onclick="sortTable123(5)">Qnt.</th>
@@ -35,7 +35,7 @@
 				
 				<td id="hide">{{item.id}}</td>
 				<td>{{item.name}}</td>
-				<td id="hide">{{item.pkey}}</td>
+				<td>{{item.pkey}}</td>
 				<td>{{item.description|slice:"50"}}</td>
 				<td>{{item.category}}</td>
 				<td>{{item.quantity}} un.</td>

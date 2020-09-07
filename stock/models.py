@@ -12,20 +12,18 @@ class Category(models.Model):
 		return self.name
 
 class Product(models.Model):
-	''' Item class'''
+	''' Item class'''	
+	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	name = models.CharField(max_length=50, unique=True)
-	brand = models.CharField(max_length=20)
-	category = models.ForeignKey(Category, on_delete=models.CASCADE)	
+	brand = models.CharField(max_length=50)
 	description = models.TextField(max_length=400)
-	pkey = models.PositiveSmallIntegerField(unique=True, help_text="Unique Product Key. Current P.Key is unique")
+	pkey = models.CharField(unique=True,max_length=100, blank=True, help_text="Unique Product Key or Catalogue number. Make sure Current P.Key is unique")
 	quantity = models.PositiveSmallIntegerField(help_text="Initial quantity value. Do no try to create a produt that already exists.")
 	price = models.DecimalField(max_digits=8, decimal_places=2, help_text= " ex: $ 127.99 * Just type numbers")
 	
 	
 	def __str__(self):
 		return (f"{self.name} -  {self.category}  -")
-
-	
 
 class HistConf(models.Model):
 	item = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -57,7 +55,7 @@ class ProductForm(forms.ModelForm):
 			'brand': forms.TextInput(attrs={'class' : 'fname', 'placeholder': 'Empty', 'required': False, 'title':'brand'}),
 			'category': forms.Select(attrs={'class': 'fname', 'required': True}),
 			'description': forms.Textarea(attrs={'class': 'fname desc', 'placeholder': 'Add a description','title': 'description', 'rows': 3}),
-			'pkey': forms.NumberInput(attrs={'class': 'fname', 'decimal_places':'0', 'required': True}),
+			'pkey': forms.TextInput(attrs={'class': 'fname', 'placeholder': 'Has to be unique for each item', 'required': True}),
 			'quantity': forms.NumberInput(attrs={'class': 'fname', 'decimal_places': '0' , 'required': True}),
 			'price': forms.NumberInput(attrs={'class': 'fname', 'max_digits': '8', 'decimal_places': '2', 'required': True, 'placeholder': "$ 127.99"})
 			}

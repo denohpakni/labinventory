@@ -1,3 +1,4 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "c:\\Users\\mimi\\Documents\\labinventory\\vnvlab\\Scripts\\python.exe"
 }
