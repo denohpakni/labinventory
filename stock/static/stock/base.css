@@ -48,6 +48,10 @@ body {
 	color: #00AD5F;
 }
 
+#redfont {
+	color: #ff0000;
+}
+
 .top-bar li, a {
 	display: inline;
 	color: gray;

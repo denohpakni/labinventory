@@ -10,7 +10,7 @@
 <!-- Bootstrap CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- Favicons -->
-<link rel="icon" href="{% static 'stock/favicon.ico' %}">
+	<link rel="icon" href="{% static 'stock/favicon.ico' %}">
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
 	{% block title %}
 	{% endblock %}
@@ -18,7 +18,7 @@
 
 	<body style="font-family: 'Lato', sans-serif;">
 			<nav class="top-bar">
-				<div class='icon'></div>
+				<div id="redfont" class='icon'></div>
 				
 				<ul class='title-area'>
 					<li class='home'> <a href="{% url 'index' %}"> Home </a></li>
@@ -27,7 +27,7 @@
 					{% if user.is_superuser %}
 					<li class='user'><a href="{% url 'admin:index' %}"> Admin </a></li>
 					{% endif %}
-					     
+										     
 				</ul>
 			</nav>
 		<table class='cols'>
