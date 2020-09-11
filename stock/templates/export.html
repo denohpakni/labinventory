@@ -1,0 +1,33 @@
+{% extends 'stock/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+	<title>Export Data</title>
+	<link rel="stylesheet" href="{% static 'stock/home.css' %}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="{% static 'stock/scripts.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    
+<h3>Export Data</h3>
+<p>exporting from database</p>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>Please select format of file.</p>
+    <select name="file-format" class="form-control my-3">
+        <option selected>Choose format...</option>
+        <option>CSV</option>
+        <option>JSON</option>
+        <option>XLS (Excel)</option>
+      </select>
+    <button class="btn btn-primary" type="submit">Export</button>
+  </form>
+  <a href="/">Return Home View</a>
+  
+</div>
+  {% endblock %} 
