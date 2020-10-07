@@ -45,3 +45,4 @@ Assume that we have file named employees.csv:
 
 The id must be present because it is the primary key. It will be generated automatically.
 
+## [Adding a search functionality](https://learndjango.com/tutorials/django-search-tutorial)

@@ -17,13 +17,16 @@
 </head>
 
 	<body style="font-family: 'Lato', sans-serif;">
-			<nav class="top-bar">
+			<nav class="navbar navbar-dark bg-dark top-bar">
 				<div id="redfont" class='icon'></div>
 				
 				<ul class='title-area'>
 					<li class='home'> <a href="{% url 'index' %}"> Home </a></li>
 					<li class='manage'><a href="{% url 'manage' %}"> Manage </a></li>
 					<li class='history'><a href="{% url 'history' %}"> History </a></li>
+					{% if user.is_authenticated %}
+					<li class='btn btn-outline-danger user'><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout </a></li>
+					{% endif %}
 					{% if user.is_superuser %}
 					<li class='user'><a href="{% url 'admin:index' %}"> Admin </a></li>
 					{% endif %}

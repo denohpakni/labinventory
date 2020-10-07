@@ -26,8 +26,8 @@
 				<th onclick="sortTableABC(3)">Description</th>
 				<th onclick="sortTableABC(4)">Category</th>
 				<th onclick="sortTable123(5)">Qnt.</th>
-				<th onclick="sortTable123(6)">Un.Price</th>
-				<th onclick="sortTable123(7)">Value</th>
+				<!-- <th onclick="sortTable123(6)">Un.Price</th> -->
+				<!-- <th onclick="sortTable123(7)">Value</th> -->
 				<th style="width: 5%; padding-right: 1px; border-top-right-radius: 5px"> Manage </th>
 			</thead>
 			{% for item in products %}		
@@ -39,8 +39,8 @@
 				<td>{{item.description|slice:"50"}}</td>
 				<td>{{item.category}}</td>
 				<td>{{item.quantity}} un.</td>
-				<td>$ {{item.price|intcomma}}/un.</td>
-				<td>$ {% widthratio item.price 1 item.quantity %}</td>
+				<!-- <td id="hide">$ {{item.price|intcomma}}/un.</td> -->
+				<!-- <td>$ {% widthratio item.price 1 item.quantity %}</td> -->
 				<td><a href="{% url 'detail' item.id %}"><i class="material-icons">list</i></a></td>
 				
 			</tr>
