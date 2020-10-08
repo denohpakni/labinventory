@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'detail.css' %}">
+    <script src="{% static 'scripts.js' %}"></script>
+{%  endblock %}
+{% block content %}
+
+
+
+<div class="mainbox">
+    <h2>Please login</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <table class="table">
+            {{ form.as_table }}
+        </table>
+     
+      <button type="submit" class="btn btn-secondary">Login</button>
+    </form>
+
+</div>
+{% endblock %}

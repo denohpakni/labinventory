@@ -19,7 +19,7 @@ def index(request):
 	# 			'total_products': len(all_products),
 	# 			'total_value': Factory.value_calculate(all_products),
 	# 			'total_items': Factory.total_items(all_products)}
-	return render(request, 'stock/stock_home.html', context)
+	return render(request, 'stock_home.html', context)
 
 
 @login_required(login_url='/login/')
@@ -43,7 +43,7 @@ def manage(request):
 			 	'sucess': sucess,
 			 	'all_products': Product.objects.all(),
 			 	}
-	return render(request, 'stock/stock_manage.html', context)
+	return render(request, 'stock_manage.html', context)
 
 
 @login_required(login_url='/login/')
@@ -59,7 +59,7 @@ def deleted(request, pkey):
 	context['pkey']= pkey
 	Product.objects.filter(pkey=pkey)[0].delete()
 
-	return render(request, 'stock/stock_manage.html', context)
+	return render(request, 'stock_manage.html', context)
 
 
 @login_required(login_url='/login/')
@@ -93,12 +93,12 @@ def detail(request, pk):
 			'history': HistConf.objects.filter(item=pk)[::-1],
 		
 			}
-	return render(request, 'stock/stock_detail.html', context)
+	return render(request, 'stock_detail.html', context)
 
 
 def history(request):
 	context ={'history':HistConf.objects.all()[::-1]}
-	return render(request, 'stock/stock_history.html', context)
+	return render(request, 'stock_history.html', context)
 
 def import_data(request):
     if request.method == 'POST':
