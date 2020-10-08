@@ -1,1 +1,1 @@
-web gunicorn labstockdb:labstockdb
+web: gunicorn labinventory.wsgi --log-file -
