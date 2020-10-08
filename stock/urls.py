@@ -10,6 +10,4 @@ urlpatterns = [
     path('history', views.history, name='history'),
     path('manage/<int:pkey>', views.deleted, name='deleted'),
     path('detail-id-<int:pk>', views.detail, name='detail'),
-    path('import',views.import_data,name='import'),
-    path('export',views.export_data, name='export'),
 ]
