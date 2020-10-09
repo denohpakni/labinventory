@@ -18,9 +18,9 @@ class Product(models.Model):
 	brand = models.CharField(max_length=50)
 	Catalog_No = models.CharField(max_length=100, blank=True)
 	description = models.TextField(max_length=400)
-	pkey = models.PositiveSmallIntegerField(unique=True, blank=True, help_text="Unique Product Key or Catalogue number. Current P.Key is unique")
-	quantity = models.PositiveSmallIntegerField(help_text="Initial quantity value. Do no try to create a produt that already exists.")
-	price = models.DecimalField(max_digits=8, decimal_places=2, help_text= " ex: $ 127.99 * Just type numbers")
+	pkey = models.PositiveSmallIntegerField(unique=True, blank=True, help_text="DONT TOUCH!!!! Unique Product Key or Catalogue number. Current P.Key is unique")
+	quantity = models.PositiveSmallIntegerField(help_text="Initial quantity value. Do no try to create a produt that already exists!")
+	price = models.DecimalField(max_digits=8, decimal_places=2, help_text= " ex: $ 127.99 * to TWO Decimal Places")
 	
 	
 	def __str__(self):

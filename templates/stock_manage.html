@@ -9,8 +9,10 @@
 {% endblock %}
 <body>
 	{% block content %}
-		{% if not request.user.is_authenticated %}
-		<div class='suc red'><p> You need to login to access this page </p></div>
+		{% if not request.user.is_superuser %}
+		<div class='tabs-button'><h1> This is where to Register or Remove Products from the database</h1></div>
+		<div class='suc red'><p> You dont have the rights to access this page </p></div>
+		<div class='suc green'><p> Contact your admin </p></div>
 		{% else %}
 	
 	<div class="tabs-button">
