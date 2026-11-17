@@ -24,15 +24,10 @@ class Factory:
 
 	@staticmethod
 	def get_pkey_unique(item):
-		all_products = item.objects.all()
-		status = True
-		for _ in range(50):
-			rand  = random.randint(0, 9999)
-			for item in all_products:
-				if rand==item.pkey:
-					status=False
-			if status:
-				return rand
+		used = set(item.objects.values_list('pkey', flat=True))
+		available = [key for key in range(10000) if key not in used]
+		if available:
+			return random.choice(available)
 		return None
 		
 	@staticmethod

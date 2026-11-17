@@ -1,7 +1,7 @@
 from django.db import models
 from django import forms
 from .backend import Factory
-import datetime
+from django.utils import timezone
 
 class Category(models.Model):
 	'''Category whre all items are included'''
@@ -38,7 +38,7 @@ class HistConf(models.Model):
 
 	@classmethod
 	def create(cls, actual, transition, pid, user=''):
-		hist = cls(actual=actual, transition=transition, total=actual+transition, user=user, time=datetime.datetime.now(), item=pid)
+		hist = cls(actual=actual, transition=transition, total=actual+transition, user=str(user), time=timezone.now(), item=pid)
 		return hist
 
 	def __str__(self):

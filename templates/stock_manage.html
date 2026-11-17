@@ -27,6 +27,7 @@
 			{% if sucess %}
 			<div class='suc grn'><p> {{ sucess }}</p></div>
 			{% endif %}
+			{% for message in messages %}<div class='suc grn'><p>{{ message }}</p></div>{% endfor %}
 
 
 	
@@ -97,13 +98,9 @@
 						<p>Description: {{item.description}}</p>
 						<p>Quantity: {{item.quantity}} un.</p>
 						<p>Price: $ {{item.price}}</p>
-						<p>						
-							<button id="rmv"  value="Remove">
-								<a href= "{% url 'deleted' item.pkey %}" onclick="clicked()">
-								Remove
-								</a>
-							</button>
-						</p>
+						<form method="post" action="{% url 'deleted' item.pkey %}" onsubmit="return confirm('Delete {{ item.name|escapejs }}?')">
+							{% csrf_token %}<button id="rmv" type="submit">Remove</button>
+						</form>
 					</div>
 				</div>
 			</li>

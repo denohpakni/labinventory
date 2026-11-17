@@ -9,6 +9,7 @@
 {%  endblock %}
 {% block content %}
 <div>
+	{% for message in messages %}<h2 class="{{ message.tags }}">{{ message }}</h2>{% endfor %}
 	{% if sucess %}
 		<h2 class="sucess">{{sucess}}</h2>
 	{% endif %}

@@ -8,6 +8,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('manage', views.manage, name='manage'),
     path('history', views.history, name='history'),
-    path('manage/<int:pkey>', views.deleted, name='deleted'),
+    path('manage/<int:pkey>/delete', views.deleted, name='deleted'),
     path('detail-id-<int:pk>', views.detail, name='detail'),
 ]
